@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\ListingStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->string('github_url')->nullable();
             $table->string('website_url')->nullable();
             $table->string('creator_twitter_url')->nullable();
-            $table->string('status')->default('awaiting-review');
+            $table->string('status')->default(ListingStatus::default());
             /** --- */
 
             $table->unsignedBigInteger('views_count')->default(0);
