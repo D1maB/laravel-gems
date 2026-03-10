@@ -4,9 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class ListingTag extends Model
 {
     /** @use HasFactory<\Database\Factories\ListingTagFactory> */
     use HasFactory;
+
+    public function listings(): BelongsToMany
+    {
+        return $this->belongsToMany(Listing::class);
+    }
 }
