@@ -14,6 +14,15 @@ return new class extends Migration
         Schema::create('listing_tags', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+
+            $table->string('slug')->unique();
+            /** Custom fields */
+            $table->string('short_description');
+
+            $table->string('seo_title')->nullable();
+            $table->string('seo_description')->nullable();
+            $table->string('seo_keywords')->nullable();
+
             $table->timestamps();
         });
     }

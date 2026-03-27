@@ -10,10 +10,15 @@ class EditListing extends EditRecord
 {
     protected static string $resource = ListingResource::class;
 
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            //DeleteAction::make(),
         ];
     }
 }

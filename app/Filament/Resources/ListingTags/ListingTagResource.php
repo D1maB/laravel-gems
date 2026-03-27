@@ -18,6 +18,8 @@ class ListingTagResource extends Resource
 {
     protected static ?string $model = ListingTag::class;
 
+    protected static ?int $navigationSort = 2;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     public static function form(Schema $schema): Schema

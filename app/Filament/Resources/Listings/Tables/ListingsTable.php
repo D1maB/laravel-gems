@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Listings\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\ImageColumn;
@@ -16,12 +17,6 @@ class ListingsTable
         return $table
             ->columns([
                 TextColumn::make('title')
-                    ->searchable(),
-                TextColumn::make('slug')
-                    ->searchable(),
-                TextColumn::make('github_url')
-                    ->searchable(),
-                TextColumn::make('website_url')
                     ->searchable(),
                 TextColumn::make('status')
                     ->searchable(),
@@ -39,6 +34,7 @@ class ListingsTable
             ])
             ->recordActions([
                 EditAction::make(),
+                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

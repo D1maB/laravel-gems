@@ -2,7 +2,10 @@
 
 namespace App\Enums;
 
-enum ListingStatus: string
+use Filament\Support\Contracts\HasLabel;
+use Illuminate\Contracts\Support\Htmlable;
+
+enum ListingStatus: string implements HasLabel
 {
     case active = 'active';
     case inactive = 'inactive';
@@ -11,5 +14,14 @@ enum ListingStatus: string
     public static function default() : self
     {
         return self::awaitingReview;
+    }
+
+    public function getLabel(): string|Htmlable|null
+    {
+        return match ($this) {
+            self::active => 'Active',
+            self::inactive => 'Inactive',
+            self::awaitingReview => 'Awaiting Review',
+        };
     }
 }
