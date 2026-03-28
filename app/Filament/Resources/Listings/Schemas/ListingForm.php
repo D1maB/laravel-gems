@@ -4,10 +4,8 @@ namespace App\Filament\Resources\Listings\Schemas;
 
 use App\Enums\ListingStatus;
 use App\Models\Listing;
-use App\Models\ListingTag;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Components\Section;
@@ -59,10 +57,10 @@ class ListingForm
                         ->url(),
 
 
-                Select::make('listing_tags')
-                    ->relationship('tags', 'name')
-                    ->options(ListingTag::query()->pluck('name', 'id'))
-                    ->multiple(),
+//                Select::make('listing_tags')
+//                    ->relationship('tags', 'name')
+//                    ->options(ListingTag::query()->pluck('name', 'id'))
+//                    ->multiple(),
 
                     Select::make('status')
                         ->options(ListingStatus::class)

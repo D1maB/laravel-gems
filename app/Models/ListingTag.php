@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class ListingTag extends Model
 {
-    /** @use HasFactory<\Database\Factories\ListingTagFactory> */
     use HasFactory;
 
     public function listings(): BelongsToMany

@@ -19,7 +19,10 @@ class ListingTagSeeder extends Seeder
         ];
 
         foreach ($tags as $tag) {
-            ListingTag::create(['name' => $tag]);
+            ListingTag::create([
+                'name' => $tag,
+                'slug' => $tag,
+            ]);
         }
     }
 }

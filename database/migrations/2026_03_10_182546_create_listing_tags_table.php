@@ -17,7 +17,7 @@ return new class extends Migration
 
             $table->string('slug')->unique();
             /** Custom fields */
-            $table->string('short_description');
+            $table->string('short_description')->nullable();
 
             $table->string('seo_title')->nullable();
             $table->string('seo_description')->nullable();
