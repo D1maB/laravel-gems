@@ -17,12 +17,13 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => env('FILAMENT_ADMIN_EMAIL'),
-            'password' => Hash::make(env('FILAMENT_ADMIN_PASSWORD')),
-        ]);
+        if(User::count() === 0) {
+            User::factory()->create([
+                'name' => 'Test User',
+                'email' => env('FILAMENT_ADMIN_EMAIL'),
+                'password' => Hash::make(env('FILAMENT_ADMIN_PASSWORD')),
+            ]);
+        }
 
         $this->call([
             ListingTagSeeder::class,

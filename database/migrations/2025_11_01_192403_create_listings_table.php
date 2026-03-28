@@ -37,8 +37,6 @@ return new class extends Migration
             $table->string('seo_description')->nullable();
             $table->string('seo_keywords')->nullable();
 
-            $table->foreignId('listing_category_id')->nullable()->nullOnDelete();
-
             $table->timestamps();
         });
     }
