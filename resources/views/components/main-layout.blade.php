@@ -96,9 +96,7 @@
 {{ $slot }}
 </main>
 
-<footer>
-footer
-</footer>
+<x-footer/>
 
 </div>
 
