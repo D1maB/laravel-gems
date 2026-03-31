@@ -41,8 +41,13 @@ class ListingForm
                     Textarea::make('description')
                         ->required()
                         ->columnSpanFull(),
+
                     FileUpload::make('preview_image')
-                        ->image(),
+                        ->required()
+                        ->image()
+                        ->directory('projects')
+                        ->disk('public')
+                        ->imageEditor(),
 
                     TextInput::make('github_url')
                         ->url()
