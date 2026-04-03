@@ -2,10 +2,16 @@
     :title="$project->title"
 >
 
-    <div class="grid lg:grid-cols-3 gap-6 sm:gap-8 mx-5 my-15">
+    <div class="grid lg:grid-cols-3 gap-8 sm:gap-10 mx-20 my-15">
         <div class="lg:col-span-2">
-            <img src="{{$project->imgUrl}}" class="object-cover w-full" width="500" heigth="300" alt="{{$project->title}}">
-
+            <div class="relative">
+                <img src="{{$project->imgUrl}}" class="object-cover w-full rounded-sm" width="" heigth="" alt="{{$project->title}}">
+                <ul class="absolute flex gap-1 left-[15px] bottom-[15px]">
+                    <li class=""><a href="#" class="bg-stone-900 text-white border-1 border-stone-700 rounded-md text-sm px-2 py-1 hover:bg-stone-800">#tag 1</a></li>
+                    <li class=""><a href="#" class="bg-stone-900 text-white border-1 border-stone-700 rounded-md text-sm px-2 py-1 hover:bg-stone-800">#tag 2</a></li>
+                    <li class=""><a href="#" class="bg-stone-900 text-white border-1 border-stone-700 rounded-md text-sm px-2 py-1 hover:bg-stone-800">#eloquent</a></li>
+                </ul>
+            </div>
             <div class="description py-4">{{$project->description}}</div>
         </div>
         <div class="lg:col-span-1">
