@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Listing;
+use App\Models\Project;
 use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
@@ -10,7 +9,7 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function __invoke(Listing $project)
+    public function __invoke(Project $project)
     {
 
         //dd(Listing::active()->count());

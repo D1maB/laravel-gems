@@ -11,7 +11,7 @@
                 </span>
             </div>
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="#" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300 flex items-center space-x-1 focus-ring" aria-label="Home">
+                <a href="/" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300 flex items-center space-x-1 focus-ring" aria-label="Home">
                     <i class="fas fa-home text-sm"></i>
                     <span>Home</span>
                 </a>

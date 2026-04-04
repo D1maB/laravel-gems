@@ -1,43 +1,31 @@
-    <!-- Stories Grid -->
-    <section id="main" class="py-20" x-data="storiesUI()">
-        <div class="container mx-auto px-4">
-            <!-- Filter Tabs -->
-            <div class="flex flex-wrap justify-center gap-3 mb-10">
-                <button class="filter-btn px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg flex items-center space-x-2 focus-ring"
-                    :class="isActive('All') ? 'bg-indigo-600 text-white' : 'bg-white text-slate-700 border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50'"
-                    @click="activeCategory='All'; visibleCount = window.innerWidth < 768 ? 3 : 6" :aria-pressed="isActive('All').toString()">
-                    <i class="fas fa-layer-group"></i>
-                    <span>All Stories</span>
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-full font-medium border transition-all duration-300 flex items-center space-x-2 focus-ring"
-                    :class="isActive('Education') ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-700 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50'"
-                    @click="activeCategory='Education'; visibleCount = window.innerWidth < 768 ? 3 : 6" :aria-pressed="isActive('Education').toString()">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>Education</span>
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-full font-medium border transition-all duration-300 flex items-center space-x-2 focus-ring"
-                    :class="isActive('Healthcare') ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-700 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50'"
-                    @click="activeCategory='Healthcare'; visibleCount = window.innerWidth < 768 ? 3 : 6" :aria-pressed="isActive('Healthcare').toString()">
-                    <i class="fas fa-heartbeat"></i>
-                    <span>Healthcare</span>
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-full font-medium border transition-all duration-300 flex items-center space-x-2 focus-ring"
-                    :class="isActive('Community') ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-700 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50'"
-                    @click="activeCategory='Community'; visibleCount = window.innerWidth < 768 ? 3 : 6" :aria-pressed="isActive('Community').toString()">
-                    <i class="fas fa-users"></i>
-                    <span>Community</span>
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-full font-medium border transition-all duration-300 flex items-center space-x-2 focus-ring"
-                    :class="isActive('Environment') ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-700 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50'"
-                    @click="activeCategory='Environment'; visibleCount = window.innerWidth < 768 ? 3 : 6" :aria-pressed="isActive('Environment').toString()">
-                    <i class="fas fa-leaf"></i>
-                    <span>Environment</span>
-                </button>
-            </div>
+@props([
+    'is_homepage' => false,
+    'has_pagination' => false,
+])
 
-            <!-- Stories -->
+    <!-- Projects Grid -->
+    <section class="py-10">
+        <div class="container mx-auto px-4">
+
+            @if($is_homepage)
+                <h2 class="text-center mb-10">Popular categories</h2>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-3 mb-10">
+                    <a href="/" class="filter-btn px-6 py-3 rounded-full font-medium border transition-all duration-300 flex items-center space-x-2 focus-ring">
+                        <span>Education</span>
+                    </a>
+                    <a href="/" class="filter-btn px-6 py-3 rounded-full font-medium border transition-all duration-300 flex items-center space-x-2 focus-ring">
+                    <span>Eloquent</span>
+                    </a>
+                    <a href="/" class="filter-btn px-6 py-3 rounded-full font-medium border transition-all duration-300 flex items-center space-x-2 focus-ring">
+                    <span>Utils</span>
+                    </a>
+                </div>
+            @endif
+            <!-- Projects -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" x-ref="grid">
-                <!-- Story 1 -->
+                <!-- Project 1 -->
                 <article class="story-card bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100 animate-fadeInUp"
                         data-cat="Education" data-idx="1"
                         x-show="showCard('Education', 1)" x-transition>
@@ -71,7 +59,7 @@
                     </div>
                 </article>
 
-                <!-- Story 2 -->
+                <!-- Project 2 -->
                 <article class="story-card bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100 animate-fadeInUp"
                         data-cat="Healthcare" data-idx="2"
                         x-show="showCard('Healthcare', 2)" x-transition>
@@ -104,7 +92,7 @@
                     </div>
                 </article>
 
-                <!-- Story 3 -->
+                <!-- Project 3 -->
                 <article class="story-card bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100 animate-fadeInUp"
                         data-cat="Community" data-idx="3"
                         x-show="showCard('Community', 3)" x-transition>
@@ -137,7 +125,7 @@
                     </div>
                 </article>
 
-                <!-- Story 4 -->
+                <!-- Project 4 -->
                 <article class="story-card bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100 animate-fadeInUp"
                         data-cat="Environment" data-idx="4"
                         x-show="showCard('Environment', 4)" x-transition>
@@ -170,7 +158,7 @@
                     </div>
                 </article>
 
-                <!-- Story 5 -->
+                <!-- Project 5 -->
                 <article class="story-card bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100 animate-fadeInUp"
                         data-cat="Education" data-idx="5"
                         x-show="showCard('Education', 5)" x-transition>
@@ -203,7 +191,7 @@
                     </div>
                 </article>
 
-                <!-- Story 6 -->
+                <!-- Project 6 -->
                 <article class="story-card bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100 animate-fadeInUp"
                         data-cat="Healthcare" data-idx="6"
                         x-show="showCard('Healthcare', 6)" x-transition>

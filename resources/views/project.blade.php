@@ -1,8 +1,8 @@
 <x-main-layout
     :title="$project->title"
 >
-
-    <div class="grid lg:grid-cols-3 gap-8 sm:gap-10 mx-20 my-15">
+    <div class="mx-20">
+    <div class="grid lg:grid-cols-3 gap-8 sm:gap-10 my-15">
         <div class="lg:col-span-2">
             <div class="relative">
                 <img src="{{$project->imgUrl}}" class="object-cover w-full rounded-sm" width="" heigth="" alt="{{$project->title}}">
@@ -18,7 +18,7 @@
             <h1>{{$project->title}}</h1>
 
             <p>{{$project->short_description}}</p>
-            
+
             <div class="mt-5">
                 <a href="{{$project->website_url}}" class="mb-2 px-4 py-2 text-center block font-medium rounded-lg border border-red-900 text-white bg-red-900 hover:bg-red-700">Visit website</a>
                 <a href="{{$project->github_url}}" class="px-4 py-2 text-center block font-medium rounded-lg border border-gray-900 text-white bg-gray-900 hover:bg-gray-700">Visit github</a>
@@ -27,8 +27,13 @@
         </div>
     </div>
 
-    <div>
-        <h3 class="text-center">Relared projects</h3>
-    </div>
+        <div>
+            <h3 class="text-center">Related projects</h3>
+
+            <x-projects-grid/>
+        </div>
+
+   </div>
+
 
 </x-main-layout>

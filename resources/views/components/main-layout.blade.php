@@ -6,7 +6,7 @@
     'type' => 'website',
 ])
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" class="scroll-smooth">
 <head>
     <meta charset="UTF-8" />
