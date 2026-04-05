@@ -1,7 +1,7 @@
 <x-main-layout :title="config('app.name')">
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-indigo-50 via-white to-yellow-50 py-15 relative overflow-hidden">
+    <section class="bg-gradient-to-br from-indigo-50 via-white to-yellow-50 py-20 relative overflow-hidden">
         <div class="absolute inset-0 bg-white/20"></div>
         <div class="pointer-events-none absolute -top-10 -right-10 w-64 h-64 rounded-full bg-yellow-200/40 blur-3xl"></div>
         <div class="pointer-events-none absolute -bottom-10 -left-10 w-64 h-64 rounded-full bg-indigo-200/40 blur-3xl"></div>
