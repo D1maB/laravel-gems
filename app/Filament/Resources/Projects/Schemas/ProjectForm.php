@@ -4,7 +4,7 @@ namespace App\Filament\Resources\Projects\Schemas;
 
 use App\Enums\ProjectStatus;
 use App\Models\Project;
-use App\Models\ProjectTag;
+use App\Models\ProjectCategory;
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
@@ -62,9 +62,10 @@ class ProjectForm
                         ->url(),
 
 
-                    Select::make('project_tags')
-                        ->relationship('tags', 'name')
-                        ->options(ProjectTag::query()->pluck('name', 'id'))
+                    Select::make('tag_id')
+                        ->relationship('categories', 'name')
+                        ->preload()
+                        //->options(ProjectCategory::query()->pluck('name', 'id'))
                         ->multiple(),
 
                     Select::make('status')

@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Filament\Resources\ProjectTags;
+namespace App\Filament\Resources\ProjectCategories;
 
-use App\Filament\Resources\ProjectTags\Pages\CreateProjectTag;
-use App\Filament\Resources\ProjectTags\Pages\EditProjectTag;
-use App\Filament\Resources\ProjectTags\Pages\ListProjectTags;
-use App\Filament\Resources\ProjectTags\Schemas\ProjectTagForm;
-use App\Filament\Resources\ProjectTags\Tables\ProjectTagsTable;
-use App\Models\ProjectTag;
+use App\Filament\Resources\ProjectCategories\Pages\CreateProjectTag;
+use App\Filament\Resources\ProjectCategories\Pages\EditProjectTag;
+use App\Filament\Resources\ProjectCategories\Pages\ListProjectTags;
+use App\Filament\Resources\ProjectCategories\Schemas\ProjectTagForm;
+use App\Filament\Resources\ProjectCategories\Tables\ProjectTagsTable;
+use App\Models\ProjectCategory;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
-class ProjectTagResource extends Resource
+class ProjectCategoryResource extends Resource
 {
-    protected static ?string $model = ProjectTag::class;
+    protected static ?string $model = ProjectCategory::class;
 
     protected static ?int $navigationSort = 2;
 

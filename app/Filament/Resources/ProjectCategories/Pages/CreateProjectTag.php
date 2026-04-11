@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Filament\Resources\ProjectTags\Pages;
+namespace App\Filament\Resources\ProjectCategories\Pages;
 
-use App\Filament\Resources\ProjectTags\ProjectTagResource;
+use App\Filament\Resources\ProjectCategories\ProjectCategoryResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateProjectTag extends CreateRecord
 {
-    protected static string $resource = ProjectTagResource::class;
+    protected static string $resource = ProjectCategoryResource::class;
 
     protected function getRedirectUrl(): string
     {

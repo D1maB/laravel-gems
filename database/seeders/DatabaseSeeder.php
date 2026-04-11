@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Listing;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -26,7 +25,8 @@ class DatabaseSeeder extends Seeder
         }
 
         $this->call([
-            ProjectTagSeeder::class,
+            ProjectCategorySeeder::class,
+            ProjectSeeder::class,
         ]);
     }
 }

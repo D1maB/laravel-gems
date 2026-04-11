@@ -36,13 +36,13 @@ class Project extends Model
         return $this->status == 'active';
     }
 
-    public function tags(): BelongsToMany
+    public function categories(): BelongsToMany
     {
         return $this->belongsToMany(
-            ProjectTag::class,
-            'project_tag',
+            ProjectCategory::class,
+            'project_category',
             'project_id',
-            'tag_id',
+            'category_id',
         );
     }
 

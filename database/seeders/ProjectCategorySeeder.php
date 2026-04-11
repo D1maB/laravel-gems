@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\ProjectTag;
+use App\Models\ProjectCategory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ProjectTagSeeder extends Seeder
+class ProjectCategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,7 +19,7 @@ class ProjectTagSeeder extends Seeder
         ];
 
         foreach ($tags as $tag) {
-            ProjectTag::create([
+            ProjectCategory::create([
                 'name' => $tag,
                 'slug' => $tag,
             ]);

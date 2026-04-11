@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ProjectTags\Pages;
+namespace App\Filament\Resources\ProjectCategories\Pages;
 
-use App\Filament\Resources\ProjectTags\ProjectTagResource;
+use App\Filament\Resources\ProjectCategories\ProjectCategoryResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
 class ListProjectTags extends ListRecords
 {
-    protected static string $resource = ProjectTagResource::class;
+    protected static string $resource = ProjectCategoryResource::class;
 
     protected function getHeaderActions(): array
     {

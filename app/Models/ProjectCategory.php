@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class ProjectTag extends Model
+class ProjectCategory extends Model
 {
-    /** @use HasFactory<\Database\Factories\ProjectTagFactory> */
+    /** @use HasFactory<\Database\Factories\ProjectCategoryFactory> */
     use HasFactory;
 
     public function projects(): BelongsToMany

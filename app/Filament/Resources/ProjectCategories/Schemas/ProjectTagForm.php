@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\ProjectTags\Schemas;
+namespace App\Filament\Resources\ProjectCategories\Schemas;
 
-use App\Models\ProjectTag;
+use App\Models\ProjectCategory;
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
@@ -25,7 +25,7 @@ class ProjectTagForm
                     TextInput::make('slug')
                         ->required()
                         ->maxLength(255)
-                        ->unique(ProjectTag::class, 'slug', fn ($record) => $record),
+                        ->unique(ProjectCategory::class, 'slug', fn ($record) => $record),
 
                     TextInput::make('short_description')
                         ->required()
