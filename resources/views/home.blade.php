@@ -17,7 +17,7 @@
         </div>
     </section>
 
-    <x-projects-grid :is_homepage="true"/>
+    <x-projects-grid  :projects="$projects" :is_homepage="true"/>
     <x-stats/>
     <x-cta/>
 

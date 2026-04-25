@@ -6,10 +6,14 @@
         <div class="lg:col-span-2">
             <div class="relative">
                 <img src="{{$project->imgUrl}}" class="object-cover w-full rounded-sm" width="" heigth="" alt="{{$project->title}}">
-                <ul class="absolute flex gap-1 left-[15px] bottom-[15px]">
-                    <li class=""><a href="#" class="bg-stone-900 text-white border-1 border-stone-700 rounded-md text-sm px-2 py-1 hover:bg-stone-800">#tag 1</a></li>
-                    <li class=""><a href="#" class="bg-stone-900 text-white border-1 border-stone-700 rounded-md text-sm px-2 py-1 hover:bg-stone-800">#tag 2</a></li>
-                    <li class=""><a href="#" class="bg-stone-900 text-white border-1 border-stone-700 rounded-md text-sm px-2 py-1 hover:bg-stone-800">#eloquent</a></li>
+                <ul class="absolute flex gap-1 bottom-5 left-4">
+                    @foreach($project->categories as $category)
+                    <li class="">
+                        <a href="#" class="bg-red-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+                            {{$category->name}}
+                        </a>
+                    </li>
+                    @endforeach
                 </ul>
             </div>
             <div class="description py-4">{{$project->description}}</div>

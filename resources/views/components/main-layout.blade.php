@@ -37,6 +37,7 @@
 
     @vite('resources/css/app.css')
 
+{{--
     <link
         rel="preload"
         as="style"
@@ -50,6 +51,7 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Indie+Flower&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         onload="this.onload=null;this.rel='stylesheet'"
     >
+--}}
     {{--
     <link rel="icon" type="image/png" href="{{ Vite::asset('resources/img/favicon-96x96.png') }}" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="{{ Vite::asset('resources/img/favicon.svg') }}" />
@@ -59,7 +61,9 @@
 {{--
     <script src="https://cdn.tailwindcss.com"></script>
 --}}
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     body { font-family: 'Inter', sans-serif; }

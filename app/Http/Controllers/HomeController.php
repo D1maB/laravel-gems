@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
+
 class HomeController extends Controller
 {
     /**
@@ -9,6 +11,12 @@ class HomeController extends Controller
      */
     public function __invoke()
     {
-        return view('home');
+        $projects = Project::with('categories')
+            ->active()
+            ->latest()
+            ->limit(6)
+            ->get();
+
+        return view('home', compact('projects'));
     }
 }
