@@ -30,11 +30,11 @@
 
                 @foreach($projects as $project)
                 <!-- Project 1 -->
-                <article class="story-card bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100 animate-fadeInUp">
-                    <div class="h-56 relative overflow-hidden">
+                <article class="relative h-full story-card bg-white rounded-2xl shadow-lg --overflow-hidden border border-slate-100 animate-fadeInUp">
+                    <div class="--h-56 relative overflow-hidden">
                         <a href="{{route('project', $project->slug)}}">
                             <img src="{{$project->imgUrl}}"
-                                 alt="Maria celebrating her college graduation outdoors" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" decoding="async">
+                                 alt="" class="w-full h-full object-cover" loading="lazy" decoding="async">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                             <div class="absolute bottom-4 left-4 w-full flex gap-1">
 
@@ -46,15 +46,17 @@
 
                             </div>
                         </a>
-                    </div>
-                    <div class="p-6">
+                    </div> 
+                    <div class="p-6 flex flex-col relative">
+                        <div>
                         <a href="{{route('project', $project->slug)}}">
-                            <h3 class="text-xl inline font-bold text-slate-900 mb-3 hover:underline">{{$project->title}}</h3>
+                            <h3 class="text-xl inline font-bold text-slate-900 hover:underline">{{$project->title}}</h3>
                         </a>
-                        <p class="text-slate-600 mb-4 leading-relaxed line-clamp-3">
+                        </div>
+                        <div class="h-[45px] text-gray-600 dark:text-gray-400 line-clamp-2 mt-2 mb-3">
                             {{$project->short_description}}
-                        </p>
-                        <div class="flex items-center justify-between">
+                        </div>
+                        <div class="flex items-center justify-between mt-auto">
                             <span class="text-sm text-slate-500 flex items-center space-x-1">
                                 <i class="far fa-calendar"></i>
                                 <span>{{ $project->created_at->format('F d, Y') }}</span>
@@ -79,7 +81,7 @@
                     </a>
                 </div>
             @endif
-            
+
         </div>
 
         <!-- Story Modal -->

@@ -10,6 +10,20 @@ class ProjectController extends Controller
     {
         abort_unless($project->isActive(), 404);
 
-        return view('project', compact('project'));
+        
+        $categories = $project->categories->pluck('id');
+
+        $relatedProjects = Project::with('categories')
+            ->active()
+            ->whereNot("id", $project->id)
+            ->whereHas("categories", function($query) use ($categories){
+                $query->whereIn('id', $categories);
+            })
+            ->latest()
+            ->limit(6)
+            ->get();
+
+
+        return view('project', compact('project'), compact('relatedProjects'));
     }
 }

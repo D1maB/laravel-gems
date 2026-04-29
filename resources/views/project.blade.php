@@ -16,7 +16,12 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="description py-4">{{$project->description}}</div>
+
+            <div class="mt-6">            
+                <h3 class="mb-2">Description</h3>
+                <div class="description pt-1">{{$project->description}}</div>
+            </div>
+
         </div>
         <div class="lg:col-span-1">
             <h1>{{$project->title}}</h1>
@@ -24,18 +29,19 @@
             <p>{{$project->short_description}}</p>
 
             <div class="mt-5">
-                <a href="{{$project->website_url}}" class="mb-2 px-4 py-2 text-center block font-medium rounded-lg border border-red-900 text-white bg-red-900 hover:bg-red-700">Visit website</a>
-                <a href="{{$project->github_url}}" class="px-4 py-2 text-center block font-medium rounded-lg border border-gray-900 text-white bg-gray-900 hover:bg-gray-700">Visit github</a>
+                <a href="{{$project->website_url}}" class="mb-2 px-4 py-2 text-center block font-medium rounded-lg border border-red-700 text-white bg-red-700">Visit website</a>
+                <a href="{{$project->github_url}}" class="px-4 py-2 text-center block font-medium rounded-lg border border-gray-900 text-white bg-gray-900">View on github</a>
             </div>
 
         </div>
     </div>
-
+        @if($relatedProjects->count())
         <div>
             <h3 class="text-center">Related projects</h3>
 
-            <x-projects-grid/>
+            <x-projects-grid :projects="$relatedProjects"/>
         </div>
+        @endif
 
    </div>
 
