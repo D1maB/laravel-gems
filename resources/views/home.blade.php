@@ -1,4 +1,4 @@
-<x-main-layout :title="config('app.name')">
+<x-main-layout :title="config('app.name')" :is_homepage="true">
 
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-indigo-50 via-white to-yellow-50 py-20 relative overflow-hidden">
@@ -11,7 +11,7 @@
                     Find the Best packages & tools for Laravel artisans
                 </h1>
                 <p class="text-xl md:text-2xl text-slate-600 mb-8 leading-relaxed animate-fadeInUp" style="animation-delay:.08s">
-                    Curated directory of tools for Laravel, php, and more.
+                    Curated directory of tools for Laravel.
                 </p>
             </div>
         </div>

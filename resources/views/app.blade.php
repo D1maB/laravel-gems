@@ -1,6 +1,6 @@
 @props([
     'canonical' => url()->current(),
-    'description' => 'The best hub for developers. Learn about PHP, Laravel, and practical web application engineering.',
+    'description' => 'Curated directory of tools for Laravel.',
     'image' => Vite::asset('resources/img/apple-touch-icon.png'),
     'title' => 'default title',
     'type' => 'website',

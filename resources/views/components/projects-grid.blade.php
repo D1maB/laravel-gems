@@ -1,7 +1,7 @@
 @props([
     'projects' => [],
     'is_homepage' => false,
-    'has_pagination' => false,
+    'pagination' => false,
 ])
 
     <!-- Projects Grid -->
@@ -73,10 +73,17 @@
 
             </div>
 
-            @if($is_homepage)
+            @if($pagination)
+                <div class="mb-5 mt-8">
+                    {{ $projects->links() }}
+                </div> 
+            @endif
+
+            @if($is_homepage)               
+
                 <!-- Load More Button -->
                 <div class="text-center mt-12">
-                    <a href="#" class="bg-white text-slate-700 border border-slate-300 px-8 py-4 rounded-xl font-medium hover:bg-slate-50 hover:border-indigo-300 transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center space-x-2 focus-ring">
+                    <a href="{{route('projects')}}" class="bg-white text-slate-700 border border-slate-300 px-8 py-4 rounded-xl font-medium hover:bg-slate-50 hover:border-indigo-300 transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center space-x-2 focus-ring">
                         <span>Show all projects</span>
                     </a>
                 </div>

@@ -2,7 +2,8 @@
     'canonical' => url()->current(),
     'description' => 'The best Laravel packages and apps directory.',
     'image' => '', // Vite::asset('resources/img/apple-touch-icon.png'),
-    'title',
+    'title' => '',
+    'is_homepage' => false,
     'type' => 'website',
 ])
 
@@ -12,7 +13,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-    <title>{{ $title }}</title>
+    <title>{{ $title }} @if(!$is_homepage) - {{ config('app.name') }}  @endif</title>
 
     <meta name="robots" content="max-image-preview:large" />
     <meta name="title" content="{{ $title }}" />
