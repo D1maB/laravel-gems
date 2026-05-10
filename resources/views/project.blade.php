@@ -9,7 +9,7 @@
                 <ul class="absolute flex gap-1 bottom-5 left-4">
                     @foreach($project->categories as $category)
                     <li class="">
-                        <a href="#" class="bg-red-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+                        <a href="{{route('project_category', $category->slug)}}" class="bg-red-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">
                             {{$category->name}}
                         </a>
                     </li>

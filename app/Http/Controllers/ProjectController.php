@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Models\Project;
-use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {

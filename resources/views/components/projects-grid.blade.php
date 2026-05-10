@@ -6,7 +6,7 @@
 
     <!-- Projects Grid -->
     <section class="py-10">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto">
 
             @if($is_homepage)
                 <h2 class="text-center mb-10">Popular categories</h2>
@@ -30,16 +30,16 @@
 
                 @foreach($projects as $project)
                 <!-- Project 1 -->
-                <article class="relative h-full story-card bg-white rounded-2xl shadow-lg --overflow-hidden border border-slate-100 animate-fadeInUp">
+                <article class="relative h-full story-card bg-white rounded-2xl shadow-lg --overflow-hidden border border-slate-100 aanimate-fadeInUp">
                     <div class="--h-56 relative overflow-hidden">
                         <a href="{{route('project', $project->slug)}}">
                             <img src="{{$project->imgUrl}}"
-                                 alt="" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                                 alt="" class="w-full h-full object-cover" ffloading="lazy" eedecoding="async">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                             <div class="absolute bottom-4 left-4 w-full flex gap-1">
 
                                 @foreach($project->categories as $category)
-                                    <a href="#" class="bg-red-700  text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm items-center">
+                                    <a href="{{route('project_category', $category->slug)}}" class="bg-red-700  text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm items-center">
                                         <span>{{$category->name}}</span>
                                     </a>
                                 @endforeach

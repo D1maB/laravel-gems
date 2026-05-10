@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjectCategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)
@@ -9,3 +10,6 @@ Route::get('/', HomeController::class)
 
 Route::get('/{project:slug}', ProjectController::class)
     ->name('project');
+
+Route::get('/category/{category:slug}', ProjectCategoryController::class)
+    ->name('project_category');
