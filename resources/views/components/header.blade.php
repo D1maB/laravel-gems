@@ -15,13 +15,9 @@
                     <i class="fas fa-home text-sm"></i>
                     <span>Home</span>
                 </a>
-                <a href="#" class="text-indigo-600 font-medium flex items-center space-x-1 focus-ring" aria-current="page">
+                <a href="{{route('projects')}}" class="text-indigo-600 font-medium flex items-center space-x-1 focus-ring" aria-current="page">
                     <i class="fas fa-star text-sm"></i>
-                    <span>Success Stories</span>
-                </a>
-                <a href="#" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300 flex items-center space-x-1 focus-ring">
-                    <i class="fas fa-handshake text-sm"></i>
-                    <span>Get Involved</span>
+                    <span>Projects</span>
                 </a>
                 <a href="#" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300 flex items-center space-x-1 focus-ring">
                     <i class="fas fa-info-circle text-sm"></i>
