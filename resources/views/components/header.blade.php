@@ -29,9 +29,9 @@
                 </a>
             </nav>
             <div class="flex items-center space-x-3">
-                <a href="#" type="button" class="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-5 py-3 rounded-lg font-medium hover:from-indigo-700 hover:to-indigo-800 transition-all duration-300 shadow-md hover:shadow-lg flex items-center space-x-2 focus-ring">
+                <a href="{{route('submit_project')}}" type="button" class="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-5 py-3 rounded-lg font-medium hover:from-indigo-700 hover:to-indigo-800 transition-all duration-300 shadow-md hover:shadow-lg flex items-center space-x-2 focus-ring">
                     <i class="fas fa-heart"></i>
-                    <span>Submit project</span>
+                    <span>Submit a project</span>
                 </a>
                 <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200 text-slate-600 hover:text-indigo-700 hover:border-indigo-300 transition focus-ring" @click="open = !open" :aria-expanded="open.toString()" aria-controls="mobile-menu" aria-label="Toggle Menu">
                     <i class="fa-solid" :class="open ? 'fa-xmark' : 'fa-bars'"></i>
