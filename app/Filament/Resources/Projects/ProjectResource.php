@@ -13,6 +13,8 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use App\Enums\ProjectStatus;
+
 
 class ProjectResource extends Resource
 {
@@ -41,6 +43,12 @@ class ProjectResource extends Resource
         ];
     }
 
+    public static function getNavigationBadge(): ?string
+    {
+        $count = Project::where('status', ProjectStatus::awaitingReview)->count();
+        return $count > 0 ? (string) $count : null; 
+    }
+
     public static function getPages(): array
     {
         return [
@@ -48,5 +56,15 @@ class ProjectResource extends Resource
             'create' => CreateProject::route('/create'),
             'edit' => EditProject::route('/{record}/edit'),
         ];
+    }
+
+    protected function getTableQuery(): Builder
+    {
+        return 
+            parent::getTableQuery()
+            //Project::query()
+                ->where('status', 'active');
+                //->orderByRaw("status = 'awaiting-review' DESC")
+                //->orderBy('title', 'desc');
     }
 }
